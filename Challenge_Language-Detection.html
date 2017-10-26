@@ -11763,7 +11763,11 @@ Create a machine learning model trained on this dataset to predict the following
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This notebook provides several solutions used to solve the prompt, highlighting the solution with the highest accuracy.</p>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This notebook provides several solutions used to solve the prompt, highlighting the solution with the highest accuracy.
+<br><br>
+The problem of language detection involves many different issues and possible solutions. Working with a large corpus allows for ambiguity in feature engineering. One major challenge is how to provide relevancy to the words or characters in a text. The next obvious question should be how to do this. 
+<br><br>
+As highlighted from the References section, given a large enough dataset an accuracy of 99% can be achieved. The best solutions used a combination of N-grams and Recurrent Neural Networks (RNN). My solution will try a similar approach.</p>
 <h2 id="Workflow">Workflow<a class="anchor-link" href="#Workflow">&#182;</a></h2><p>The challenge solution focuses on preparing and preprocessing the dataset, classifying and creating features that can be used to correctly predict the test set.</p>
 <ol>
 <li>Load the training dataset</li>
@@ -12648,7 +12652,7 @@ Each cell corresponds to a normalized weight indicating its frequency in the doc
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Modeling">Modeling<a class="anchor-link" href="#Modeling">&#182;</a></h1><p>The problem itself is a multi-class classification. There are 21 classes that each line of text can be classified to. That being said, the models used for predicting only relate to multi-class classification</p>
+<h1 id="Modeling">Modeling<a class="anchor-link" href="#Modeling">&#182;</a></h1><p>The problem itself is a multi-class classification. There are 21 classes that each line of text can be classified to. That being said, the models used for predicting only relate to multi-class classification.</p>
 <ol>
 <li>Logistic Regression</li>
 <li>KNN</li>
@@ -12659,6 +12663,7 @@ Each cell corresponds to a normalized weight indicating its frequency in the doc
 <li>Random Forest</li>
 <li>RNN</li>
 </ol>
+<p>These models highlight the probabilities in which a given language could be considered. In cases where trigrams maybe intersect with more than one language, having probabilities to determine output boost the chance of success.</p>
 
 </div>
 </div>
@@ -13419,7 +13424,10 @@ Test accuracy: 72.5666666667
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1><p>From this challenge, it is seen that Logistic Regression performed with the highest accuracy. With the European languages not being as similar as Asianic languages for example, there seemed to be a clear separation of classes. With this clear separation, it proved to be much easier for an inherently multiclass classifer to make predictions after training.
-In the future, I would like to improve the accuracy of the RNN model mixed with N-grams. With proper tuning, a larger dataset and multi-RNN model, the accuracy should be at least comparable to the 90% accuracy of Logistic Regression.</p>
+<br><br>
+In the future, I would like to improve the accuracy of the RNN model mixed with N-grams. With proper tuning, a larger dataset and multi-RNN model, the accuracy should be at least comparable to the 90% accuracy of Logistic Regression.
+<br><br>
+Aside from tuning hyperparameters to increase accuracy of the model, using a higher numbered N-gram would give more specific information about the data.</p>
 
 </div>
 </div>
